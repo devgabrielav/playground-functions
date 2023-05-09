@@ -29,6 +29,18 @@ console.log(splitSentence('vamo que vamo'));
 console.log(splitSentence('foguete'));
 
 // Desafio 3 - Crie a função concatName
+const array = ['Lucas', 'Cassiano', 'Ferraz', 'Paolillo'];
+const array2 = ['foguete', 'não', 'tem', 'ré'];
+const array3 = ['captain', 'my', 'captain'];
+let array4 = '';
+
+function concatName(param){
+      return  ( param[param.length - 1] + ', ' + param[0]);
+  }
+
+console.log(concatName(array));
+console.log(concatName(array2));
+console.log(concatName(array3));
 
 // Desafio 4 - Crie a função footballPoints
 

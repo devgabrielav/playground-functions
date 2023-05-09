@@ -43,6 +43,16 @@ console.log(concatName(array2));
 console.log(concatName(array3));
 
 // Desafio 4 - Crie a função footballPoints
+const wins = 3;
+const ties = 1;
+
+function footballPoints(vitorias, empates){
+  return vitorias * wins + empates * ties 
+}
+
+console.log(footballPoints(14, 8));
+console.log(footballPoints(1, 2));
+console.log(footballPoints(0, 0));
 
 // Desafio 5 - Crie a função highestCount
 

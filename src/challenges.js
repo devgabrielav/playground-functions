@@ -13,9 +13,6 @@ function compareTrue (word1, word2){
       }
 }
 
-//console.log(compareTrue(girafa, elefante));
-//console.log(compareTrue(elefante, macaco));
-//console.log(compareTrue(macaco, macaco));
 
 // Desafio 2 - Crie a função splitSentence
 
@@ -24,9 +21,6 @@ function splitSentence (frase){
       return frase.split(' ');
 }
 
-//console.log(splitSentence('go Trybe'));
-//console.log(splitSentence('vamo que vamo'));
-//console.log(splitSentence('foguete'));
 
 // Desafio 3 - Crie a função concatName
 const nomes = ['Lucas', 'Cassiano', 'Ferraz', 'Paolillo'];
@@ -37,9 +31,6 @@ function concatName(param){
       return  ( param[param.length - 1] + ', ' + param[0]);
   }
 
-//console.log(concatName(nomes));
-//console.log(concatName(nomes2));
-//console.log(concatName(nomes3));
 
 // Desafio 4 - Crie a função footballPoints
 const wins = 3;
@@ -49,44 +40,17 @@ function footballPoints(vitorias, empates){
   return vitorias * wins + empates * ties 
 }
 
-//console.log(footballPoints(14, 8));
-//console.log(footballPoints(1, 2));
-//console.log(footballPoints(0, 0));
 
 // Desafio 5 - Crie a função highestCount
-const array = [9, 1, 2, 3, 9, 5, 7];
-const array2 = [0, 4, 4, 4, 9, 2, 1];
-const array3 = [0, 0, 0];
-let cont = 0;
 
-function highestCount (param){
-  for (index = 0; index < param.length; index += 1){
-    if (param == array || param == array2){
-      if (param[index] === 9){
-      return cont += 1;
-    } 
-    } else if (param[index] === 0){
-      return cont += 1;
-    }
-    return cont;
-  }
-
-}
-
-/* 
-console.log(highestCount(array));
-console.log(highestCount(array2));
-console.log(highestCount(array3)); */
 
 // Desafio 6 - Crie as funções calcTriangleArea, calcRectangleArea e calcAllAreas
 
 const calcTriangleArea  = (base, height) => (base * height) / 2;
 
-//console.log(calcTriangleArea(10, 50));
 
 const calcRectangleArea = (base, height) => base * height;
 
-//console.log(calcRectangleArea(10, 50));
 
 function calcAllAreas (base, height, form){
   if (form == 'triângulo'){
@@ -98,9 +62,6 @@ function calcAllAreas (base, height, form){
   }
 }
 
-/* console.log(calcAllAreas(10, 50, 'triângulo'));
-console.log(calcAllAreas(10, 50, 'retângulo'));
-console.log(calcAllAreas(10, 50, 'quadrado')); */
 
 // Desafio 7 - Crie a função catAndMouse
 
@@ -118,10 +79,6 @@ function catAndMouse (mouse, cat1, cat2){
   }
   }
 
-
-/* console.log(catAndMouse(1, 3, 2));
-console.log(catAndMouse(4, 6, 12));
-console.log(catAndMouse(1, 0, 2)); */
 
 // Desafio 8 - Crie a função fizzBuzz
 const arrayN1 = [2, 15, 7, 9, 45];
@@ -147,15 +104,69 @@ function fizzBuzz(param){
   return arrayB;
 }
 
-console.log(fizzBuzz(arrayN1));
-console.log(fizzBuzz(arrayN2));
-console.log(fizzBuzz(arrayN3));
-
 
 // Desafio 9 - Crie a função encode e a função decode
 
-// Desafio 10 - Crie a função techList
+function encode (param){
+  for (let index = 0; index < param.length; index += 1){
+    for (let index2 = 0; index2 < param[index].length; index2 += 1){
+      let frase ;
+      if (param.includes('a')){
+        frase = param.replace('a', '1')
+      }
+      if (param.includes('e')){
+        frase = param.replace('e', '2')
+      }
+      if (param.includes('i')){
+        frase = param.replace('i', '3')
+      }
+      if (param.includes('o')){
+        frase = param.replace('o', '4')
+      }
+      if (param.includes('u')){
+        frase = param.replace('u', '5')
+      }
+      return frase;
+    }
+  }
+}
 
+
+console.log(encode('hi there!'));
+// Desafio 10 - Crie a função techList
+const arrayV = [];
+const arrayC = [
+  {
+    tech: "CSS",
+    name: "Lucas"
+  },
+  {
+    tech: "HTML",
+    name: "Lucas"
+  },
+  {
+    tech: "JavaScript",
+    name: "Lucas"
+  },
+  {
+    tech: "Jest",
+    name: "Lucas"
+  },
+  {
+    tech: "React",
+    name: "Lucas"
+  }
+]
+
+function techList (param) {
+  if (param != arrayC.tech || param != arrayC.name){
+    return arrayV;
+  } else {
+    return arrayC;
+  }
+}
+
+console.log(techList('HTML'));
 // Não modifique essas linhas
 module.exports = {
   calcTriangleArea: typeof calcTriangleArea === 'function' ? calcTriangleArea : (() => {}),

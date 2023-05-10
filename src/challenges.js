@@ -52,17 +52,13 @@ function highestCount(param) {
   let biggestNumber = Math.max(...param);
 
   for (let index = 0; index < param.length; index += 1) {
-      if (param[index] === biggestNumber) {
-        count += 1;
-      } 
+    if (param[index] === biggestNumber) {
+      count += 1;
     }
-    return count;
+  }
+  return count;
 }
 
-console.log(highestCount(array));
-console.log(highestCount(array2));
-console.log(highestCount(array3));
- 
 
 // Desafio 6 - Crie as funções calcTriangleArea, calcRectangleArea e calcAllAreas
 
@@ -127,7 +123,56 @@ function fizzBuzz(param) {
 
 // Desafio 9 - Crie a função encode e a função decode
 
+function encode(param) {
+  let newArray = '';
+  for (index = 0; index < param.length; index += 1) {
+    if (param[index] === 'a') {
+      newArray += '1';
+    } else if (param[index] === 'e') {
+      newArray += '2';
+    } else if (param[index] === 'i') {
+      newArray += '3';
+    } else if (param[index] === 'o') {
+      newArray += '4';
+    } else if (param[index] === 'u') {
+      newArray += '5';
+    } else {
+      newArray += param[index];
+    }
+  }
+  return newArray;
+}
 
+console.log(encode('hello'));
+console.log(encode('How are you today?'));
+console.log(encode('This is an encoding test.'));
+console.log(encode('go Trybe!'));
+
+
+function decode (param) {
+  let newArray = '';
+  for (index = 0; index < param.length; index += 1) {
+    if (param[index] === '1') {
+      newArray += 'a';
+    } else if (param[index] === '2') {
+      newArray += 'e';
+    } else if (param[index] === '3') {
+      newArray += 'i';
+    } else if (param[index] === '4') {
+      newArray += 'o';
+    } else if (param[index] === '5') {
+      newArray += 'u';
+    } else {
+      newArray += param[index];
+    }
+  }
+  return newArray;
+}
+
+console.log(decode('h2ll4'));
+console.log(decode('H4w 1r2 y45 t4d1y?'));
+console.log(decode('Th3s 3s 1n 2nc4d3ng t2st.'));
+console.log(decode('g4 Tryb2!'));
 
 // Desafio 10 - Crie a função techList
 

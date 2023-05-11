@@ -14,6 +14,7 @@ function compareTrue(word1, word2) {
 }
 
 
+
 // Desafio 2 - Crie a função splitSentence
 
 

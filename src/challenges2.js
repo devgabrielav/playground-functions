@@ -1,27 +1,52 @@
 // Desafio 11 - Crie a função generatePhoneNumber
-const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1];
-
-function generatePhoneNumber(array) {
-  for (index = 0; index < array.length; index += 1) {
-    for (index2 = 0; index2 < array.length; index2 += 1){
-    if (array.length === 11) {
-      return 'Array com tamanho incorreto.'
-    } else if (array[index] < 0 || array[index] > 9){
-      return 'não é possível gerar um número de telefone com esses valores'
-    } else if (array[index] == index2 >= 3){
-      return 'não é possível gerar um número de telefone com esses valores'
-    } else {
-      return `(${array[0]}${array[1]}) ${array[2]}${array[3]}${array[4]}${array[5]}${array[6]}-${array[7]}${array[8]}${array[9]}${array[10]}`
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, -1];
+function generatePhoneNumber(param) {
+  let count = 0;
+  for (index = 0; index < param.length; index += 1) {
+    for (index2 = 0; index2 < param.length; index2 += 1) {
+      if (param[index] === param[index2]) {
+        count += 1;
+      }
+      if (param.length != 11) {
+        return 'Array com tamanho incorreto.';
+      }
+      if (param[index] < 0 || param[index] > 9 || count >= 3) {
+        return 'não é possível gerar um número de telefone com esses valores';
+      }
+      if (param.length === 11) {
+        return `(${param[0]}${param[1]}) ${param[2]}${param[3]}${param[4]}${param[5]}${param[6]}-${param[7]}${param[8]}${param[9]}${param[10]}`
+      }
     }
-}
-}
+  }
 }
 
-console.log(generatePhoneNumber(numero));
+
 // Desafio 12 -  Crie a função triangleCheck
 
-// Desafio 13 - Crie a função hydrate
+function triangleCheck(lineA, lineB, lineC) {
+  if (lineA < (lineB + lineC) || lineB < (lineA + lineC) || lineC < (lineA + lineB)) {
+    if (lineA > Math.abs(lineB - lineC) || lineB > Math.abs(lineA - lineC) || lineC > Math.abs(lineA - lineB)) {
+      return true
+    } else {
+      return false
+    }
+  }
+}
 
+
+// Desafio 13 - Crie a função hydrate
+function hydrate(string) {
+  let count = 0;
+  for (index = 0; index < string.length; index += 1) {
+    for (index2 = 0; index2 < string[index].length; index2 += 1) {
+      if (string[index2] == string.match(/\d+/g)) {
+        count += string[index2];
+      }
+    }
+  }
+  return `${count} copos de água`
+}
+console.log(hydrate('1 cachaça, 5 cervejas e 1 copo de vinho'));
 /* eslint no-undef: 0 */
 
 // Não modifique essas linhas

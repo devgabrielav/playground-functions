@@ -123,7 +123,7 @@ function fizzBuzz(param) {
 
 // Desafio 9 - Crie a função encode e a função decode
 
-function encode(param) {
+function encode (param) {
   let newArray = '';
   for (index = 0; index < param.length; index += 1) {
     if (param[index] === 'a') {
@@ -143,10 +143,6 @@ function encode(param) {
   return newArray;
 }
 
-console.log(encode('hello'));
-console.log(encode('How are you today?'));
-console.log(encode('This is an encoding test.'));
-console.log(encode('go Trybe!'));
 
 
 function decode (param) {
@@ -169,13 +165,22 @@ function decode (param) {
   return newArray;
 }
 
-console.log(decode('h2ll4'));
-console.log(decode('H4w 1r2 y45 t4d1y?'));
-console.log(decode('Th3s 3s 1n 2nc4d3ng t2st.'));
-console.log(decode('g4 Tryb2!'));
-
 // Desafio 10 - Crie a função techList
-
+const linguaguens = ['React', 'Jest', 'HTML', 'CSS', 'JavaScript'];
+const nome = 'Lucas';
+function techList (array, name){
+  let emptArray = [];
+  for (let index = 0; index < array.length; index += 1){
+    if (array.length > 0){
+      array.sort();
+      emptArray.push({name: name, tech: array[index]});
+    } else {
+      return emptArray;
+    }
+  }
+  return emptArray;
+}
+console.log(techList(linguaguens, nome));
 
 // Não modifique essas linhas
 module.exports = {

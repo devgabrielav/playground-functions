@@ -71,9 +71,9 @@ const calcRectangleArea = (base, height) => base * height;
 
 function calcAllAreas(base, height, form) {
   if (form == 'triângulo') {
-    return 'O valor da área do triângulo é de: ' + calcTriangleArea(10, 50);
+    return 'O valor da área do triângulo é de: ' + calcTriangleArea(base, height);
   } else if (form == 'retângulo') {
-    return 'O valor da área do retângulo é de: ' + calcRectangleArea(10, 50);
+    return 'O valor da área do retângulo é de: ' + calcRectangleArea(base, height);
   } else {
     return 'Não foi possível fazer o cálculo, insira uma forma geométrica válida'
   }

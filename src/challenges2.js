@@ -1,41 +1,46 @@
 // Desafio 11 - Crie a função generatePhoneNumber
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, -1];
-function generatePhoneNumber(param) {
-  let count = 0;
-  for (index = 0; index < param.length; index += 1) {
-    for (index2 = 0; index2 < param.length; index2 += 1) {
-      if (param[index] === param[index2]) {
-        count += 1;
-      }
-      if (param.length != 11) {
-        return 'Array com tamanho incorreto.';
-      }
-      if (param[index] < 0 || param[index] > 9 || count >= 3) {
-        return 'não é possível gerar um número de telefone com esses valores';
-      }
-      if (param.length === 11) {
-        return `(${param[0]}${param[1]}) ${param[2]}${param[3]}${param[4]}${param[5]}${param[6]}-${param[7]}${param[8]}${param[9]}${param[10]}`
+function generatePhoneNumber(array) {
+  if (array.length !== 11) {
+    return 'Array com tamanho incorreto.';
+  }
+  for (let index = 0; index < array.length; index += 1) {
+    let count = 0;
+      for (let index2 = 0; index2 < array.length; index2 += 1) {
+        if (array[index] === array[index2]) {
+          count += 1;
+          if (array[index] < 0 || array[index] > 9 || count >= 3) {
+            return 'não é possível gerar um número de telefone com esses valores';
+          }
+        }
       }
     }
-  }
+  return `(${array[0]}${array[1]}) ${array[2]}${array[3]}${array[4]}${array[5]}${array[6]}-${array[7]}${array[8]}${array[9]}${array[10]}`;
 }
 
+console.log(generatePhoneNumber([0, 21, 3, 4, 14, 2, 7, 8, 19, 9, 4]));
 
 // Desafio 12 -  Crie a função triangleCheck
 
 function triangleCheck(lineA, lineB, lineC) {
-  if (lineA < (lineB + lineC) || lineB < (lineA + lineC) || lineC < (lineA + lineB)) {
-    if (lineA > Math.abs(lineB - lineC) || lineB > Math.abs(lineA - lineC) || lineC > Math.abs(lineA - lineB)) {
-      return true
-    } else {
-      return false
-    }
+  if (
+    lineA < lineB + lineC ||
+    lineB < lineA + lineC ||
+    lineC < lineA + lineB ||
+    lineA > Math.abs(lineB - lineC) ||
+    lineA > Math.abs(lineC - lineB) ||
+    lineB > Math.abs(lineA - lineC) ||
+    lineB > Math.abs(lineC - lineA) ||
+    lineC > Math.abs(lineA - lineB) ||
+    lineC > Math.abs(lineB - lineC)
+  ) {
+    return true;
+  } else {
+    return false;
   }
 }
 
-
 // Desafio 13 - Crie a função hydrate
-function hydrate(string) {
+/* function hydrate(string) {
   let count = 0;
   for (index = 0; index < string.length; index += 1) {
     for (index2 = 0; index2 < string[index].length; index2 += 1) {
@@ -46,12 +51,13 @@ function hydrate(string) {
   }
   return `${count} copos de água`
 }
-console.log(hydrate('1 cachaça, 5 cervejas e 1 copo de vinho'));
+ */
 /* eslint no-undef: 0 */
 
 // Não modifique essas linhas
 module.exports = {
-  generatePhoneNumber: typeof generatePhoneNumber === 'function' ? generatePhoneNumber : (() => { }),
-  triangleCheck: typeof triangleCheck === 'function' ? triangleCheck : (() => { }),
-  hydrate: typeof hydrate === 'function' ? hydrate : (() => { }),
+  generatePhoneNumber:
+    typeof generatePhoneNumber === 'function' ? generatePhoneNumber : () => {},
+  triangleCheck: typeof triangleCheck === 'function' ? triangleCheck : () => {},
+  hydrate: typeof hydrate === 'function' ? hydrate : () => {},
 };
